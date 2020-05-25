@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-rs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+      city: kazan
+  template:
+    metadata:
+      labels:
+        app: nginx
+        city: kazan
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+
